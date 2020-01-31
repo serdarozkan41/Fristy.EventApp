@@ -1,0 +1,21 @@
+﻿using CoreGraphics;
+using EventApp.iOS.Renderers;
+using UIKit;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
+
+[assembly: ExportRenderer(typeof(Entry), typeof(CustomEntryRenderer))]
+namespace EventApp.iOS.Renderers
+{
+    public class CustomEntryRenderer : EntryRenderer
+    {
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        {
+            base.OnElementChanged(e);
+            Control.Layer.BorderWidth = 0;
+            Control.BorderStyle = UITextBorderStyle.None;
+            Control.LeftView = new UIView(new CGRect(0, 0, 10, 0));
+            Control.LeftViewMode = UITextFieldViewMode.Always;
+        }
+    }
+}

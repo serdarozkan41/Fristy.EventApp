@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="EventApp.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+
+
+        <OnPlatform x:Key="ProximaExtraBold" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="ProximaNova-Extrabld" />
+            <On Platform="Android" Value="proxima_extrabold.ttf#ProximaNova-Extrabld" />
+        </OnPlatform>
+        <OnPlatform x:Key="ProximaBold" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="ProximaNova-Bold" />
+            <On Platform="Android" Value="proxima_bold.ttf#ProximaNova-Bold" />
+        </OnPlatform>
+        <OnPlatform x:Key="MontserratBold" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Montserrat-Bold" />
+            <On Platform="Android" Value="montserrat_bold.ttf#Montserrat-Bold" />
+        </OnPlatform>
+        <OnPlatform x:Key="MontserratRegular" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Montserrat-Regular" />
+            <On Platform="Android" Value="montserrat_regular.ttf#Montserrat-Regular" />
+        </OnPlatform>
+
+
+        <Color x:Key="MainBackground">#224E6B</Color>
+        <Color x:Key="AppLightBlue">#85BBD2</Color>
+        <Color x:Key="AppDarkBlue">#122F42</Color>
+        <Color x:Key="OverlayColor">#BF040404</Color>
+        <Color x:Key="IndicatorColor">#FF0fafa9</Color>
+
+        <Style TargetType="{x:Type NavigationPage}">
+            <Setter Property="BarTextColor" Value="White" />
+        </Style>
+    </Application.Resources>
+</Application>
