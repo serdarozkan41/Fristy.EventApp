@@ -5,25 +5,19 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
-	<key>CFBundleDisplayName</key>
-	<string>EventApp</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.fristy.EventApp</string>
 	<key>CFBundleVersion</key>
@@ -32,8 +26,6 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>EventApp</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
@@ -45,5 +37,11 @@
 		<string>proxima_bold.ttf</string>
 		<string>proxima_extrabold.ttf</string>
 	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleDisplayName</key>
+	<string>Fristy</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>

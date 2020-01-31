@@ -1,5 +1,4 @@
 ﻿using EventApp.PopupViews;
-using EventApp.Views.WelcomeViews;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -7,62 +6,35 @@ using Xamarin.Forms;
 
 namespace EventApp.ViewModels.WelcomeViewModels
 {
-    public class LoginViewModel: BaseViewModel
+    public class ForgotPasswordViewModel : BaseViewModel
     {
         private string email;
 
         public string Email
         {
             get { return email; }
-            set { email = value;
+            set
+            {
+                email = value;
                 OnPropertyChanged();
             }
         }
-
-        private string password;
-
-        public string Password
-        {
-            get { return password; }
-            set { password = value;
-                OnPropertyChanged();
-            }
-        }
-
-
 
         public ICommand LoginCommand { get; set; }
-        public ICommand RegisterCommand { get; set; }
         public ICommand ForgotCommand { get; set; }
 
-        public LoginViewModel()
+        public ForgotPasswordViewModel()
         {
             LoginCommand = new Command(OnLogin);
-            RegisterCommand = new Command(OnRegister);
             ForgotCommand = new Command(OnForgot);
         }
-
 
         private async void OnForgot()
         {
             IsBusy = true;
             try
             {
-                GoPage(new ForgotPasswordView());
-            }
-            catch (Exception ex)
-            {
-                await Rg.Plugins.Popup.Services.PopupNavigation.Instance.PushAsync(new OoopsPopupView(ex.Message));
-            }
-            IsBusy = false;
-        }
-
-        private async void OnRegister()
-        {
-            IsBusy = true;
-            try
-            {
-                GoPage(new RegisterView());
+                await Rg.Plugins.Popup.Services.PopupNavigation.Instance.PushAsync(new OoopsPopupView("mail or password is incorrect"));
             }
             catch (Exception ex)
             {
@@ -76,7 +48,7 @@ namespace EventApp.ViewModels.WelcomeViewModels
             IsBusy = true;
             try
             {
-                await Task.Delay(2000);
+                BackPage();
             }
             catch (Exception ex)
             {

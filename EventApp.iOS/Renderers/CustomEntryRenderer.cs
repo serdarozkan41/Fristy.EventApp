@@ -12,10 +12,14 @@ namespace EventApp.iOS.Renderers
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
-            Control.Layer.BorderWidth = 0;
-            Control.BorderStyle = UITextBorderStyle.None;
-            Control.LeftView = new UIView(new CGRect(0, 0, 10, 0));
-            Control.LeftViewMode = UITextFieldViewMode.Always;
+
+            if (Control!=null)
+            {
+                Control.Layer.BorderWidth = 0;
+                Control.BorderStyle = UITextBorderStyle.None;
+                Control.LeftView = new UIView(new CGRect(0, 0, 10, 0));
+                Control.LeftViewMode = UITextFieldViewMode.Always;
+            }
         }
     }
 }
