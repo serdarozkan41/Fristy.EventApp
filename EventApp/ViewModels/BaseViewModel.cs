@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Xamarin.Forms;
 
 namespace EventApp.ViewModels
 {
@@ -33,5 +34,14 @@ namespace EventApp.ViewModels
             set { SetValue(ref isBusy, value); }
         }
 
+        public async void GoPage(Page targetPage)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(targetPage);
+        }
+
+        public async void BackPage()
+        {
+            await Application.Current.MainPage.Navigation.PopAsync();
+        }
     }
 }

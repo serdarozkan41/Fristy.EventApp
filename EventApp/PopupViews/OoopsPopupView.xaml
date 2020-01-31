@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="EventApp.PopupViews.OoopsPopupView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    mc:Ignorable="d">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Frame
+            Margin="20,10,20,10"
+            Padding="0"
+            BackgroundColor="White"
+            CornerRadius="5"
+            HeightRequest="250"
+            HorizontalOptions="Center"
+            IsClippedToBounds="True"
+            VerticalOptions="Center"
+            WidthRequest="290">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="0,20,0,0"
+                    Opacity="0.65"
+                    Source="ic_ooops" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0,10,0,0"
+                    FontFamily="{StaticResource ProximaBold}"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Opacity="0.65"
+                    Text="OOOPS!"
+                    TextColor="#F44336" />
+
+                <Label
+                    x:Name="LbMessage"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontFamily="{StaticResource MontserratRegular}"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Mail or password is incorrect"
+                    TextColor="#6A6A6A" />
+
+                <Button
+                    x:Name="BuOk"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="0,0,0,20"
+                    BackgroundColor="#F44336"
+                    Clicked="BuOk_Clicked"
+                    CornerRadius="25"
+                    FontFamily="{StaticResource ProximaBold}"
+                    HeightRequest="35"
+                    HorizontalOptions="Center"
+                    Text="Try Again"
+                    TextColor="White"
+                    WidthRequest="170" />
+            </Grid>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

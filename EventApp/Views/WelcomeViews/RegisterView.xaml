@@ -1,16 +1,19 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="EventApp.Views.WelcomeViews.LoginView"
+    x:Class="EventApp.Views.WelcomeViews.RegisterView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:welcomeviewmodels="clr-namespace:EventApp.ViewModels.WelcomeViewModels"
     ios:Page.UseSafeArea="true"
     BackgroundColor="{StaticResource MainBackground}"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
     <ContentPage.BindingContext>
-        <welcomeviewmodels:LoginViewModel />
+        <welcomeviewmodels:RegisterViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
@@ -62,7 +65,7 @@
                         FontSize="16"
                         HorizontalOptions="Start"
                         HorizontalTextAlignment="Start"
-                        Text="Sign in to continue"
+                        Text="Sign up to continue"
                         TextColor="{StaticResource AppLightBlue}" />
                 </Grid>
                 <Grid
@@ -72,13 +75,37 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" />
                         <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
+                    <Grid Grid.Row="0" Grid.Column="0">
+                        <Frame
+                            Margin="0"
+                            Padding="0"
+                            BackgroundColor="White"
+                            BorderColor="Transparent"
+                            CornerRadius="5"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            IsClippedToBounds="True"
+                            Opacity="0.20"
+                            VerticalOptions="FillAndExpand" />
+                        <Entry
+                            Margin="10,0,0,0"
+                            BackgroundColor="Transparent"
+                            FontFamily="{StaticResource MontserratBold}"
+                            FontSize="14"
+                            Placeholder="FULL NAME"
+                            PlaceholderColor="#BDBDBD"
+                            Text="{Binding FullName}"
+                            TextColor="White" />
+                    </Grid>
                     <Grid
-                        Grid.Row="0"
+                        Grid.Row="1"
                         Grid.Column="0"
                         HeightRequest="50">
                         <Frame
@@ -103,7 +130,7 @@
                             Text="{Binding Email}"
                             TextColor="White" />
                     </Grid>
-                    <Grid Grid.Row="1" Grid.Column="0">
+                    <Grid Grid.Row="2" Grid.Column="0">
                         <Frame
                             Margin="0"
                             Padding="0"
@@ -126,6 +153,29 @@
                             Text="{Binding Password}"
                             TextColor="White" />
                     </Grid>
+                    <Grid Grid.Row="3" Grid.Column="0">
+                        <Frame
+                            Margin="0"
+                            Padding="0"
+                            BackgroundColor="White"
+                            BorderColor="Transparent"
+                            CornerRadius="5"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            IsClippedToBounds="True"
+                            Opacity="0.20"
+                            VerticalOptions="FillAndExpand" />
+                        <Entry
+                            Margin="10,0,0,0"
+                            BackgroundColor="Transparent"
+                            FontFamily="{StaticResource MontserratBold}"
+                            FontSize="14"
+                            IsPassword="True"
+                            Placeholder="AGAIN PASSWORD"
+                            PlaceholderColor="#BDBDBD"
+                            Text="{Binding AgainPassword}"
+                            TextColor="White" />
+                    </Grid>
                 </Grid>
                 <Grid
                     Grid.Row="3"
@@ -142,7 +192,7 @@
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding LoginCommand}" />
+                            <TapGestureRecognizer Command="{Binding RegisterCommand}" />
                         </Frame.GestureRecognizers>
                     </Frame>
                     <Label
@@ -150,7 +200,7 @@
                         FontFamily="{StaticResource MontserratBold}"
                         HorizontalOptions="Start"
                         HorizontalTextAlignment="Start"
-                        Text="LOGIN"
+                        Text="REGISTER"
                         TextColor="{StaticResource AppDarkBlue}"
                         VerticalOptions="Center"
                         VerticalTextAlignment="Center" />
@@ -181,12 +231,7 @@
                         FontSize="16"
                         HorizontalOptions="Start"
                         HorizontalTextAlignment="Start"
-                        Text="Forgot Password?"
-                        TextColor="White">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ForgotCommand}" />
-                        </Label.GestureRecognizers>
-                    </Label>
+                        TextColor="White" />
 
                     <Label
                         Grid.Row="0"
@@ -195,10 +240,10 @@
                         FontSize="16"
                         HorizontalOptions="End"
                         HorizontalTextAlignment="End"
-                        Text="Create Account"
+                        Text="Sign In"
                         TextColor="White">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding RegisterCommand}" />
+                            <TapGestureRecognizer Command="{Binding LoginCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>

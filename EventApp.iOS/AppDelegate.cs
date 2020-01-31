@@ -23,6 +23,7 @@ namespace EventApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
             app.StatusBarStyle = UIStatusBarStyle.LightContent;
