@@ -40,6 +40,7 @@ namespace EventApp.ViewModels.WelcomeViewModels
             ForgotCommand = new Command(OnForgot);
         }
 
+
         private async void OnForgot()
         {
             IsBusy = true;
